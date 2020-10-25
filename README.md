@@ -1,5 +1,5 @@
 # DeepLearningLab
-Dockerfile for PyTorch/TorchScript/TensorRT and related development
+Dockerfile for PyTorch/TorchScript/TensorRT and related development<br>
 Aligned with nvcr.io versiom 20.10, e.g. latest Triton inference server (atm)
 
 # Base image
