@@ -1,5 +1,6 @@
 # DeepLearningLab
 Dockerfile for PyTorch/TorchScript/TensorRT and related development
+Aligned with nvcr.io versiom 20.10, e.g. latest Triton inference server (atm)
 
 # Base image
 nvcr.io/nvidia/tensorrt:20.10-py3
