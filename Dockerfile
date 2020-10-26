@@ -22,7 +22,6 @@ RUN cd pytorch && TORCH_CUDA_ARCH_LIST="3.5 5.2 6.0 6.1 7.0+PTX" TORCH_NVCC_FLAG
 RUN git clone https://github.com/pytorch/vision.git && cd vision && pip install -v .    
 
 # Latest Detectron2 (build from source)
-RUN pip install pycocotools
 RUN git clone https://github.com/facebookresearch/detectron2.git
 RUN python -m pip install -e detectron2
 
@@ -57,7 +56,7 @@ RUN pip uninstall -y onnxruntime
 RUN pip install -U onnxruntime
 
 # Fix a vulnerability
-RUN apt-get update && apt --only-upgrade install -y libfreetype6
+RUN apt-get update && apt-get --only-upgrade install -y libfreetype6
 
 
 
