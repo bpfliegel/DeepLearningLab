@@ -52,9 +52,9 @@ RUN cd onnx-tensorrt && mkdir build && cd build
 RUN cd onnx-tensorrt && cd build && cmake .. -DTENSORRT_ROOT=/opt/tensorrt/bin && make -j
 RUN cd onnx-tensorrt && cd build && export LD_LIBRARY_PATH=$PWD:$LD_LIBRARY_PATH
 
-# Latest ONNX runtime - GPU (from wheel)
+# Latest ONNX runtime (from wheel)
 RUN pip uninstall -y onnxruntime
-RUN pip install -U onnxruntime-gpu
+RUN pip install -U onnxruntime
 
 # Fix a vulnerability
 RUN apt-get update && apt --only-upgrade install -y libfreetype6
