@@ -3,8 +3,8 @@ Dockerfile for PyTorch/TorchScript/TensorRT and related development<br>
 Aligned with nvcr.io version 20.10, e.g. latest Triton inference server (atm)
 
 # Base image
-nvcr.io/nvidia/tensorrt:20.10-py3<br>
-https://docs.nvidia.com/deeplearning/tensorrt/container-release-notes/rel_20-10.html
+FROM nvcr.io/nvidia/pytorch:20.10-py3<br>
+https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel_20-10.html
 
 * Ubuntu 18.04
 * TensorRT 7.2.1.
