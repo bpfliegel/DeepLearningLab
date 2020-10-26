@@ -28,7 +28,7 @@ https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel_20-10.
 * TRTorch - build from latest source + CUDA 11.1 upgrade + PyTorch latest alignment --- https://github.com/NVIDIA/TRTorch
 * ONNX-TensorRT - build from latest source --- https://github.com/onnx/onnx-tensorr
 * Detectron2 - build from latest source --- https://github.com/facebookresearch/detectron2
-* ONNX Runtime - GPU - wheel --- https://github.com/microsoft/onnxruntime
+* ONNX Runtime - CPU - wheel --- https://github.com/microsoft/onnxruntime
 
 # Notes
 * For TRTorch build Bazel 3.4.1 is installed (not the latest) as per the TRTorch repo
