@@ -39,7 +39,7 @@ RUN cp /usr/lib/x86_64-linux-gnu/libnvinfer.so /usr/lib/x86_64-linux-gnu/libnvin
 # Latest TRTorch (build from source) + CUDA 11.1 support and align to latest PyTorch
 RUN apt-get update && apt-get install -y locales ninja-build && rm -rf /var/lib/apt/lists/* && locale-gen en_US.UTF-8
 RUN git clone https://github.com/NVIDIA/TRTorch.git
-COPY WORKSPACE.cu111.docker TRTorch/WORKSPACE
+COPY WORKSPACE TRTorch/WORKSPACE
 COPY lowering.cpp TRTorch/core/lowering/lowering.cpp
 RUN cd TRTorch && bazel build //:libtrtorch --compilation_mode opt
 RUN cd TRTorch && cd py && python setup.py install --use-cxx11-abi
@@ -55,6 +55,9 @@ RUN cd onnx-tensorrt && cd build && export LD_LIBRARY_PATH=$PWD:$LD_LIBRARY_PATH
 # Latest ONNX runtime - GPU (from wheel)
 RUN pip uninstall -y onnxruntime
 RUN pip install -U onnxruntime-gpu
+
+# Fix a vulnerability
+RUN apt-get update && apt --only-upgrade install -y libfreetype6
 
 
 
